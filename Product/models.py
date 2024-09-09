@@ -60,11 +60,11 @@ class Product(models.Model):
         **NULLABLE,
         help_text="Укажите дату изменения"
     )
-    manufactured_at = models.DateField(
-        verbose_name="Дата производства продукта",
-        **NULLABLE,
-        help_text="Укажите дату производства продукта"
-    )
+    # manufactured_at = models.DateField(
+    #     verbose_name="Дата производства продукта",
+    #     **NULLABLE,
+    #     help_text="Укажите дату производства продукта"
+    # )
 
     class Meta:
         verbose_name = "Продукт"
