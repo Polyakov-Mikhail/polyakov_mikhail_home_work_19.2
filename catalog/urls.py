@@ -5,7 +5,7 @@ from catalog.views import home, contacts, unit
 app_name = CatalogConfig.name
 
 urlpatterns = [
-    path('home/', home, name="homework19"),
-    path('contacts/', contacts, name="contacts"),
-    path('unit/', unit, name="unit")
+    path('homework19/', home, name="homework19"),
+    path('homework19/contacts/', contacts, name="contacts"),
+    path('homework19/unit/', unit, name="unit")
 ]

@@ -6,6 +6,6 @@ from Product.views import product, product_detail
 app_name = ProductConfig.name
 
 urlpatterns = [
-    path('', product, name='home'),
-    path('products/<int:pk>/', product_detail, name='product_detail')
+    path('homework20/', product, name='home'),
+    path('homework20/products/<int:pk>/', product_detail, name='product_detail')
 ]
