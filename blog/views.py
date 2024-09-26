@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views.generic import ListView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from blog.models import Blog
 
@@ -7,5 +7,18 @@ from blog.models import Blog
 class BlogListView(ListView):
     model = Blog
 
-# def start(request):
-#     return render(request, "start.html")
+
+class BlogDetailView(DetailView):
+    model = Blog
+
+
+class BlogCreateView(CreateView):
+    model = Blog
+    fields = ("title", "content", "image")
+    success_url = reverse_lazy('blog:blog_list')
+
+
+class BlogUpdateView(UpdateView):
+    model = Blog
+    fields = ("title", "content", "image")
+    success_url = reverse_lazy('blog:blog_list')

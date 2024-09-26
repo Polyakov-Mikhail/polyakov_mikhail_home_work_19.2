@@ -1,0 +1,35 @@
+<div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+                <h4>Немного о домашке</h4>
+                <p class="text-body-secondary">Домашняя работа связанная с блогами</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+                <h4>Активные кнопки</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'start:start' %}" class="text-white">Главная страница</a></li>
+                    <li>
+                        <a href="{% url 'catalog:homework19' %}"
+                           class="text-white">Ссылка на домашку 19.2</a></li>
+                    <li>
+                        <a href="{% url 'Product:home' %}"
+                           class="text-white">Ссылка на домашку 20.2</a></li>
+                    <li>
+                        <a href="{% url 'blog:blog_list' %}"
+                           class="text-white">Ссылка на домашку 21.1</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
