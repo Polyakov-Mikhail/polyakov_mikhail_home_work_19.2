@@ -36,7 +36,7 @@ class Blog(models.Model):
         verbose_name='Опубликовано'
     )
 
-    count_views = models.IntegerField(
+    count_views = models.PositiveIntegerField(
         default=0,
         verbose_name='Просмотры'
     )
