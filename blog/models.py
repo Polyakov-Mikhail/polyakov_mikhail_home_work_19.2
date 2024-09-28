@@ -38,7 +38,8 @@ class Blog(models.Model):
 
     count_views = models.PositiveIntegerField(
         default=0,
-        verbose_name='Просмотры'
+        verbose_name='Просмотры',
+        editable=False
     )
 
     def __str__(self):
