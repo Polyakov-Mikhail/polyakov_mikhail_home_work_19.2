@@ -190,8 +190,8 @@
                 <h1 class="fw-light">Продуктовая</h1>
                 <p class="lead text-body-secondary">Креатива ночью нет, поэтому просто "Продукты"</p>
                 <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    <a href="{% url 'Product:product_create' %}"  class="btn btn-primary my-2">Добавить продукт</a>
+                    <a href="{% url 'Product:home' %}" class="btn btn-secondary my-2">Все продукты</a>
                 </p>
             </div>
         </div>
