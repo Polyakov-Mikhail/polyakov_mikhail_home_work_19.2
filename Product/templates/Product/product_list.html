@@ -18,6 +18,7 @@
                         <p class="card-text">Цена продукта: {{ product.price }} руб. </p>
                         <p class="card-text">{{ product.description|truncatechars:100 }}</p>
                         <div class="d-flex justify-content-between align-items-center">
+                            {% if user.is_authenticated %}
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="{% url 'Product:product_detail' product.pk %}"
                                    role="button">Информация</a>
@@ -30,6 +31,7 @@
                                 <a class="btn btn-danger" href="{% url 'Product:product_delete' product.pk %}"
                                    role="button">Удалить</a>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

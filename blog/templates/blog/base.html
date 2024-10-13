@@ -189,10 +189,12 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Блоговая</h1>
                 <p class="lead text-body-secondary">Тут будет много статей (блогов)</p>
+                {% if user.is_authenticated %}
                 <p>
                     <a href="{% url 'blog:blog_create' %}" class="btn btn-primary my-2">Создать</a>
                     <a href="{% url 'blog:blog_list' %}" class="btn btn-secondary my-2">Все статьи</a>
                 </p>
+                {% endif %}
             </div>
         </div>
     </section>

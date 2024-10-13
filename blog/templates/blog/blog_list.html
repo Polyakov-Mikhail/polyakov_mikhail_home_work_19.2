@@ -14,11 +14,13 @@
                         <p class="card-text">{{ blog }}</p>
                         <p class="card-text">{{ blog.content|truncatechars:100 }}</p>
                         <div class="d-flex justify-content-between align-items-center">
+                            {% if user.is_authenticated %}
                             <div class="btn-group">
                                 <a class="btn btn-primary" href="{% url 'blog:blog_detail' blog.pk %}" role="button">Информация</a>
                                 <a class="btn btn-primary" href="{% url 'blog:blog_update' blog.pk %}" role="button">Редактирование</a>
                                 <a class="btn btn-primary" href="{% url 'blog:blog_delete' blog.pk %}" role="button">Удаление</a>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
