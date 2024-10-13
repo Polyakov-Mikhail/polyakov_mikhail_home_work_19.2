@@ -45,6 +45,7 @@ class ProductCreateView(CreateView):
         else:
             return self.render_to_response(self.get_context_data(form=form, formset=formset))
 
+
 class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductForm

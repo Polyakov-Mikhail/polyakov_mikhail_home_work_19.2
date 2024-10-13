@@ -26,15 +26,17 @@
                     {% if user.is_authenticated %}
                     <li>
                         <a href="{% url 'users:logout' %}"
-                           class="text-white">Выход</a></li>
+                           class="text-white"><p><span style="color: #ff0000;">Выход</span></p></a></li>
+                    <li>Ваш логин: {{ user.get_username }}</li>
                     {% else %}
                     <li>
                         <a href="{% url 'users:login' %}"
-                           class="text-white">Вход</a></li>
-                    {% endif %}
+                           class="text-white"><p><span style="color: #32CD32;">Вход</span></p></a></li>
                     <li>
-                        <a href="{% url 'Product:home' %}"
+                        <a href="{% url 'users:register' %}"
                            class="text-white">Регистрация</a></li>
+                    {% endif %}
+
                 </ul>
             </div>
         </div>
