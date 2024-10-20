@@ -6,5 +6,5 @@ from blog.models import Blog
 class BlogForm(ModelForm):
     class Meta:
         model = Blog
-        exclude = ("is_published", "owner")
+        exclude = ("owner",)
 

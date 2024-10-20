@@ -17,7 +17,7 @@ class StyleFormMixin:
 class ProductForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'description', 'image', 'category', 'price')
+        fields = ('name', 'description', 'image', 'category', 'price', 'is_published')
 
     def clean_name(self):
 
@@ -45,6 +45,12 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
                 raise forms.ValidationError('Торвар с таким описанием запрещен к продадаже на этой площадке')
 
         return cleaned_data
+
+
+class ProductModeratorForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('description', 'category', 'is_published')
 
 
 class VersionForm(StyleFormMixin, forms.ModelForm):

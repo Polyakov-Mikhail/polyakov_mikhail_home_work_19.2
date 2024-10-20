@@ -68,11 +68,20 @@ class Product(models.Model):
         **NULLABLE,
         on_delete=models.SET_NULL
     )
+    is_published = models.BooleanField(
+        default=False,
+        verbose_name='Опубликовано'
+    )
 
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["name", "category"]
+        permissions = [
+            ("can_edit_category", "Can edit category"),
+            ("can_edit_description", "Can edit description"),
+            ("can_edit_is_published", "Can edit is_published")
+        ]
 
     def __str__(self):
         return self.name
