@@ -5,13 +5,14 @@ from pytils.translit import slugify
 
 from blog.forms import BlogForm
 from blog.models import Blog
+from services import get_models_from_cache
 
 
 class BlogListView(ListView):
     model = Blog
 
-    def get_queryset(self, *args, **kwargs):
-        queryset = super().get_queryset(*args, **kwargs)
+    def get_queryset(self):
+        queryset = get_models_from_cache(Blog)
         queryset = queryset.filter(is_published=True)
         return queryset
 

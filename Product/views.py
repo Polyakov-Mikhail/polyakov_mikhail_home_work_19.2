@@ -6,14 +6,15 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 from Product.forms import ProductForm, VersionForm, ProductModeratorForm
-from Product.models import Product, Version
+from Product.models import Product, Version, Category
+from services import get_models_from_cache
 
 
 class ProductListView(ListView):
     model = Product
 
-    def get_queryset(self, *args, **kwargs):
-        queryset = super().get_queryset(*args, **kwargs)
+    def get_queryset(self):
+        queryset = get_models_from_cache(Product)
         queryset = queryset.filter(is_published=True)
         return queryset
 
@@ -98,3 +99,10 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
 class ProductDeleteView(DeleteView):
     model = Product
     success_url = reverse_lazy('Product:home')
+
+
+class CategoryListView(ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_models_from_cache(Category)

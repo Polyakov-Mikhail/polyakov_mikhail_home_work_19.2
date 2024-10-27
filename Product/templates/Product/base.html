@@ -192,7 +192,10 @@
                 {% if user.is_authenticated %}
                 <p>
                     <a href="{% url 'Product:product_create' %}"  class="btn btn-primary my-2">Добавить продукт</a>
+                </p>
+                <p>
                     <a href="{% url 'Product:home' %}" class="btn btn-secondary my-2">Все продукты</a>
+                    <a href="{% url 'Product:category_list' %}" class="btn btn-secondary my-2">Все категории</a>
                 </p>
                 {% endif %}
             </div>

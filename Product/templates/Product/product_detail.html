@@ -4,13 +4,30 @@
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
+            <div class="col-6">
                 <div class="card shadow-sm">
                     <img src="{{ product.image | media_filter }}">
                     <div class="card-body">
-                        <p class="card-text">Продукт: {{ object.name }}</p>
-                        <p class="card-text">Описание продукта: {{ object.description }}</p>
-                        <p class="card-text">Категория продкута: {{ object.category }}</p>
+                        <table class="table">
+                            <tr>
+                                <td>Продукт:</td>
+                                <td>{{ object.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Описание продукта:</td>
+                                <td>{{ object.description }}</td>
+                            </tr>
+                            <tr>
+                                <td>Категория продкута:</td>
+                                <td>{{ object.category }}</td>
+                            </tr>
+                            {%for category in object.category_set.all%}
+                            <tr>
+                                <td>Описание категории:</td>
+                                <td>{{ category }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
                         {%for version in object.version.all%}
                         {% if version.version_sign %}
                         <p class="card-text">Версия: {{version.version_number}}</p>
@@ -27,6 +44,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 {% endblock %}
